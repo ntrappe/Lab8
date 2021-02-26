@@ -6,4 +6,11 @@ describe('Party Horn Tests', () => {
   it('First Test', () => {
     expect(true).to.equal(true);
   });
+
+  it('Slider changes when volume input change', () => {
+    cy.get('#volume-number').clear().type('75');
+    cy.get('#volume-slider').then(($el) => {
+      expect($el).to.have.value(75);
+    });
+  });
 });
